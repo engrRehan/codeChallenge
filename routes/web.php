@@ -18,6 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('apis',function(){
+    return view('apis.apiUser');
+});
 
 Route::middleware(['auth'])->group(function(){
     Route::resource('groups', 'GroupsController');
